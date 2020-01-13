@@ -26,13 +26,6 @@ describe("Player", function() {
         player1.addShip(ship1)
         player1.addShip(ship2)
         player1.addShip(ship3)
-        expect(player1.ships.length).toEqual(3);
-      })
-
-      it('wont accept more than 3 ships', () => {
-        player1.addShip(ship1)
-        player1.addShip(ship2)
-        player1.addShip(ship3)
         player1.addShip(ship4)
         expect(player1.ships.length).toEqual(3);
       })

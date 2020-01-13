@@ -5,11 +5,6 @@ class Player{
     }
 
     addShip(ship = new Ship(3)){
-        if(this.ships.length >= 3){
-        console.log("Fleet full.")
-        }
-        else {
-        this.ships.push(ship)
-        }
+        (this.ships.length >= 3) ? console.log("Fleet is full") : (this.ships.push(ship))
       }
 }
