@@ -1,11 +1,8 @@
-class Order{
-  // constructor(total= new Total, menu = new Menu) {
-  //   this.total = total
-  //   this.menu = menu
-  //   this.customerOrder = []
-  // }
-
-  // itemOrder(num, item){
-  //   this.customerOrder.push(' '+item + '     '+ num + ' x '   + this.total.itemPrice(item) + '\n')
-  // }
+class Game{
+  constructor(player1= new Player, player2 = new Player) {
+    this.player1 = player1
+    this.player2 = player2
+    this.player1Points = player1.points
+    this.player2Points = player2.points
+  }
 }
