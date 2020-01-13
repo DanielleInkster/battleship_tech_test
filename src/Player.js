@@ -1,6 +1,6 @@
 class Player{
     constructor() {
-      this.ships = 3
+      this.ships = []
       this.points = 12
     }
 }
