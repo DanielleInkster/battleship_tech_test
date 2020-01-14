@@ -1,14 +1,19 @@
 class Player{
-    constructor() {
-      this.ships = []
+    constructor( ship1 = new Ship(3), ship2 = new Ship(4), ship1 = new Ship(5)) {
+      this.ship1 = ship1
+      this.ship2 = ship2
+      this.ship3 = ship3
       this.points = 12
       this.turn = false
       this.board = new Board
+      this.shipPositions = []
     }
 
-    addShip(ship = new Ship(3)){
-        if (ship.length < 3 || ship.length > 5) { throw "Ship length must be between 3 and 5 units."}
-        (this.ships.length >= 3) ? console.log("Fleet is full") : (this.ships.push(ship))
-    }
+    positionShip(ship, ...coordinates){
+      if(ship.positioned === true) { throw "Ship has already been placed."}
+      if(arguments.length != this.length) { throw "Number of co-ordinates entered does not equal ship length. Please try again."}
+      if(this.position.includes(...coordinates)) { throw "One or more of these co-ordinates is already filled. Please try again"}
+      this.shipPositions << coordinates
+      }
 
 }

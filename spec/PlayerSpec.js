@@ -18,7 +18,11 @@ describe("Player", function() {
 
     it("initializes with a new board", function() {
       expect(player1.board).toEqual(new Board);
-  });
+    });
+
+    it("initializes with an empty array", function() {
+      expect(player1.shipPositions).toEqual([]);
+    });
 
     describe('addShip', function(){
       it('adds ships to the players array', () => {
