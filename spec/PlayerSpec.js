@@ -20,7 +20,12 @@ describe("Player", function() {
       it('adds ships to the players array', () => {
         player1.addShip(ship1)
         expect(player1.ships.length).toEqual(1);
-      })
+      }) 
+
+      it('will only accept ships with a length of 3-5', () => {
+        let ship5 = new Ship(8)
+        expect(function(){ player1.addShip(ship5); } ).toThrow("Ship length must be between 3 and 5 units.");
+      }) 
 
       it('wont accept more than 3 ships', () => {
         player1.addShip(ship1)
