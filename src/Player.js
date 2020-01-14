@@ -2,6 +2,7 @@ class Player{
     constructor() {
       this.ships = []
       this.points = 12
+      this.turn = false
     }
 
     addShip(ship = new Ship(3)){
