@@ -14,4 +14,10 @@ describe("Ship", function() {
       expect(ship1.position).toEqual([]);
     });
 
+    describe('positionShip', function(){
+      it('throws an error if the wrong number of coordinates are entered', () => {
+        expect(function(){ ship2.positionShip('h1','h2','h3','h4'); } ).toThrow("Number of co-ordinates entered does not equal ship length. Please try again.")
+      }) 
+    }) 
+
 })
