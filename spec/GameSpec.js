@@ -14,4 +14,11 @@ describe("Game", function() {
     expect(game.player1Points).toEqual(player.points);
     expect(game.player2Points).toEqual(player.points);
   });
+
+  describe('startGame', function(){
+    it("initiates player1 turn", () =>{
+    game.startGame()
+    expect(game.player1.turn).toEqual(true);
+    })
+  })
 })

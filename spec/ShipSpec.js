@@ -6,8 +6,12 @@ describe("Ship", function() {
     });
 
     it("can be set to variable lengths", function() {
-        expect(ship1.length).toEqual(5);
-        expect(ship2.length).toEqual(3);
-      });
+      expect(ship1.length).toEqual(5);
+      expect(ship2.length).toEqual(3);
+    });
+
+    it("initializes with an empty array", function() {
+      expect(ship1.position).toEqual([]);
+    });
 
 })
