@@ -1,14 +1,11 @@
 class Player{
-    constructor() {
-      this.ships = []
-      this.points = 12
-      this.turn = false
-      this.board = new Board
-    }
-
-    addShip(ship = new Ship(3)){
-        if (ship.length < 3 || ship.length > 5) { throw "Ship length must be between 3 and 5 units."}
-        (this.ships.length >= 3) ? console.log("Fleet is full") : (this.ships.push(ship))
-    }
-
+  constructor(ship1 = new Ship(3), ship2 = new Ship(4), ship3 = new Ship(5)) {
+    this.ship1 = ship1
+    this.ship2 = ship2
+    this.ship3 = ship3
+    this.points = 12
+    this.turn = false
+    this.board = new Board
+    this.shipPositions = []
+  }
 }
