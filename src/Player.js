@@ -3,6 +3,7 @@ class Player{
       this.ships = []
       this.points = 12
       this.turn = false
+      this.board = new Board
     }
 
     addShip(ship = new Ship(3)){
