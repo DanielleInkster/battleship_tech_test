@@ -9,9 +9,9 @@ class Player{
   }
 
   positionShip(shipNum, [...coordinates]) { 
+    this.fleet[shipNum].checkLength(...coordinates),
+    this.board.checkIfOccupied(...coordinates),
     this.fleet[shipNum].setPosition()
-    this.fleet[shipNum].checkLength(...coordinates)
-    this.board.checkIfOccupied(...coordinates)
     coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
     )}
 }
