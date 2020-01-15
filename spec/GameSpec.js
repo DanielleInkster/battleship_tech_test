@@ -10,15 +10,18 @@ describe("Game", function() {
     expect(game.player2).toEqual(player);
   });
 
-  it("initiates with player points", function() {
-    expect(game.player1Points).toEqual(player.points);
-    expect(game.player2Points).toEqual(player.points);
-  });
-
   describe('startGame', function(){
     it("initiates player1 turn", () =>{
     game.startGame()
     expect(game.player1.turn).toEqual(true);
+    })
+  })
+
+  describe('winner', function(){
+    it("declares a winner", () =>{
+    game.player1.points = 5
+    game.player2.points = 0
+    expect(game.winner()).toEqual("Player 1 wins!");
     })
   })
 })
