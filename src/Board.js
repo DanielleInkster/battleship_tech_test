@@ -10,5 +10,11 @@ class Board{
         'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8',
         'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8'
         ]
+      
+      this.occupiedCoordinates =[]
+    }
+
+    checkIfOccupied(...coordinates){
+      coordinates.forEach(item => {if (this.occupiedCoordinates.includes(item)) {throw "One or more of the co-ordinates entered is already occupied. Please try again."}})
     }
 }

@@ -4,5 +4,13 @@ class Player{
     this.points = points
     this.turn = false
     this.board = board
+    this.hits = []
+    this.misses = []
   }
+
+  positionShip(shipNum, [...coordinates]) { 
+    this.fleet[shipNum].checkLength(...coordinates)
+    this.board.checkIfOccupied(...coordinates)
+    coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
+    )}
 }
