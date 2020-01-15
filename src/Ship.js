@@ -9,4 +9,8 @@ class Ship{
     checkLength(...coordinates){
       if (coordinates.length != this.length) {throw `This ship requires ${this.length} co-ordinates. Please try again.`}
     }
+
+    setPosition(){
+      if (this.positioned === true) {throw "This ship has already been placed"} else {this.positioned = true}
+    }
   }

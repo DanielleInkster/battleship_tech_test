@@ -20,4 +20,11 @@ describe("Ship", function() {
       })
     })
 
+    describe('setPosition', function(){
+      it("fixes ship to board", () =>{
+      ship1.positioned = true
+      expect(function(){ ship1.setPosition(); } ).toThrow("This ship has already been placed");
+      })
+    })
+
 })

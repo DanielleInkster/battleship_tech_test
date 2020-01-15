@@ -12,6 +12,4 @@ class Game{
   if(this.player1.points === 0) return ("Player 2 wins!")
   if(this.player2.points === 0) return ("Player 1 wins!")
   }
-
-  
 }
