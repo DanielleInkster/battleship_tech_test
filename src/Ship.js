@@ -15,14 +15,25 @@ class Ship{
     }
 
     checkHit(coordinate){
-      if (this.coordinates.includes(coordinate) && this.coordinates.length > 1 ){
+      if (this.coordinates.includes(coordinate) && this.coordinates.length > 0 ){
         this.coordinates = this.coordinates.filter(function(ele){return ele != coordinate})
-        return 'Hit!'
-      } else if (this.coordinates.includes(coordinate) && this.coordinates.length === 1){
-        this.coordinates = "Ship sunk"
-        return 'Hit and sunk!'
+        return true
       } else {
-        return "Miss!"
+        return false
       }
+    }
+
+    checkSunk(coordinate){
+       if (this.coordinates.includes(coordinate) && this.coordinates.length === 0){
+          this.coordinates = "Ship sunk"
+          this.shipSunk()
+          return true
+       } else {
+         return false
+       }
+    }
+
+    shipSunk(){
+      this.sunk = true
     }
 }

@@ -14,4 +14,17 @@ class Player{
     this.fleet[shipNum].setPosition()
     coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
   )}
+
+  fire(shipNum,coordinate){
+    if(this.fleet[shipNum].coordinates.length > 1){return this.checkHit(shipNum, coordinate)}
+    if(this.fleet[shipNum].coordinates.length===1){return this.checkSunk(shipNum, coordinate)}
+  }
+
+  checkHit(shipNum, coordinate){
+    return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit":"Miss!")
+  }
+
+  checkSunk(shipNum, coordinate){
+    return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
+  }
 }
