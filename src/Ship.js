@@ -15,7 +15,7 @@ class Ship{
     }
 
     checkHit(coordinate){
-      if (this.coordinates.includes(coordinate) && this.coordinates.length > 0 ){
+      if (this.coordinates.includes(coordinate)){
         this.coordinates = this.coordinates.filter(function(ele){return ele != coordinate})
         return true
       } else {
@@ -24,7 +24,7 @@ class Ship{
     }
 
     checkSunk(coordinate){
-       if (this.coordinates.includes(coordinate) && this.coordinates.length === 0){
+       if (this.coordinates.includes(coordinate)){
           this.coordinates = "Ship sunk"
           this.shipSunk()
           return true
