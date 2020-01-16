@@ -13,5 +13,5 @@ class Player{
     this.board.checkIfOccupied(...coordinates),
     this.fleet[shipNum].setPosition()
     coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
-    )}
+  )}
 }
