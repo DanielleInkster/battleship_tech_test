@@ -12,9 +12,18 @@ class Board{
         ]
       
       this.occupiedCoordinates =[]
+      this.hits = []
+      this.misses = []
     }
 
     checkIfOccupied(...coordinates){
       coordinates.forEach(item => {if (this.occupiedCoordinates.includes(item)) {throw "One or more of the co-ordinates entered is already occupied. Please try again."}})
+    }
+
+    addHit(coordinate){
+      this.hits.push(coordinate)
+    }
+    addMiss(coordinate){
+      this.misses.push(coordinate)
     }
 }

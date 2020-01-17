@@ -4,8 +4,6 @@ class Player{
     this.points = points
     this.turn = false
     this.board = board
-    this.hits = []
-    this.misses = []
   }
 
   positionShip(shipNum, [...coordinates]) { 
@@ -26,12 +24,5 @@ class Player{
 
   checkSunk(shipNum, coordinate){
     return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
-  }
-
-  addHit(coordinate){
-    this.hits.push(coordinate)
-  }
-  addMiss(coordinate){
-    this.misses.push(coordinate)
   }
 }
