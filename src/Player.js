@@ -35,4 +35,8 @@ class Player{
     this.misses.push(coordinate)
   }
 
+  changePoints(){
+    this.points -=1
+  }
+
 }
