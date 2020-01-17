@@ -9,7 +9,7 @@ class Game{
   }
 
   winner(){
-  if(this.player1.hits.length === 12) return ("Player 2 wins!")
-  if(this.player2.hits.length === 12) return ("Player 1 wins!")
+  if(this.player1.points === 0) return ("Player 2 wins!")
+  if(this.player2.points === 0) return ("Player 1 wins!")
   }
 }

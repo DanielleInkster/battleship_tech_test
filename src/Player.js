@@ -1,6 +1,7 @@
 class Player{
   constructor(fleet = [ new Ship(3), new Ship(4), new Ship(5)], points = 12, board = new Board) {
     this.fleet = fleet
+    this.points = points
     this.turn = false
     this.board = board
     this.hits = []
@@ -26,4 +27,9 @@ class Player{
   checkSunk(shipNum, coordinate){
     return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
   }
+
+  addHit(coordinate){
+    this.hits.push(coordinate)
+  }
+
 }

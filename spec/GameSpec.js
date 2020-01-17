@@ -19,8 +19,8 @@ describe("Game", function() {
 
   describe('winner', function(){
     it("declares a winner", () =>{
-    game.player1.hits.length = 5
-    game.player2.hits.length = 12
+    game.player1.points = 5
+    game.player2.points = 0
     expect(game.winner()).toEqual("Player 1 wins!");
     })
   })
