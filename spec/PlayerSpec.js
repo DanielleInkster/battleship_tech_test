@@ -47,4 +47,11 @@ describe("Player", function() {
       })
     })
 
+    describe('addMiss', function(){
+      it("adds miss coordinate to array", () =>{
+      player1.addMiss('b1')
+      expect(player1.misses[0]).toEqual("b1");
+      })
+    })
+
 })

@@ -31,5 +31,8 @@ class Player{
   addHit(coordinate){
     this.hits.push(coordinate)
   }
+  addMiss(coordinate){
+    this.misses.push(coordinate)
+  }
 
 }
