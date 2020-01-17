@@ -12,11 +12,6 @@ describe("Player", function() {
       expect(player1.fleet[0]).toEqual(new Ship);
     });
 
-    it("initializes with points", function() {
-      // # of points should be equal to combined length of ships for game play
-      expect(player1.points).toEqual(12);
-    });
-
     describe('positionShip', function(){
       it("places a ship on the board", () =>{
       player1.positionShip(0, ['a1','a2','a3'])
