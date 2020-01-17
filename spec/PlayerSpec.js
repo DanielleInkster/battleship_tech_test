@@ -24,4 +24,20 @@ describe("Player", function() {
       })
     })
 
+    describe('checkHit', function(){
+      it("checks if player's ship is hit", () =>{
+      player1.positionShip(0, ['a1','a2','a3'])
+      expect(player1.checkHit(0,'a1')).toEqual("Hit!");
+      })
+    })
+
+    describe('checkSunk', function(){
+      it("checks if player's ship is sunk", () =>{
+      player1.positionShip(0, ['a1','a2','a3'])
+      player1.fire(0,'a1')
+      player1.fire(0,'a2')
+      expect(player1.checkSunk(0,'a3')).toEqual("Hit and sunk!");
+      })
+    })
+
 })

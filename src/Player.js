@@ -21,7 +21,7 @@ class Player{
   }
 
   checkHit(shipNum, coordinate){
-    return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit":"Miss!")
+    return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit!":"Miss!")
   }
 
   checkSunk(shipNum, coordinate){
