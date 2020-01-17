@@ -54,11 +54,4 @@ describe("Player", function() {
       })
     })
 
-    describe('changePoints', function(){
-      it("points are subtracted", () =>{
-      player1.changePoints()
-      expect(player1.points).toEqual(11);
-      })
-    })
-
 })

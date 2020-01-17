@@ -34,9 +34,4 @@ class Player{
   addMiss(coordinate){
     this.misses.push(coordinate)
   }
-
-  changePoints(){
-    this.points -=1
-  }
-
 }
