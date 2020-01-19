@@ -21,7 +21,7 @@ class Board{
     }
 
     checkIfValid(...coordinates){
-      coordinates.forEach(item => {if (!this.availableCoordinates.includes(item)) {throw "Co-ordinates can only include letters A-H and numbers 1-8 (Ex: 'A1', 'C7'"}})
+      coordinates.forEach(item => {if (!this.availableCoordinates.includes(item)) {throw "Co-ordinates can only include letters A-H and numbers 1-8 (Ex: 'A1', 'C7')"}})
     }
 
     addHit(coordinate){
