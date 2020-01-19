@@ -13,16 +13,25 @@ class Player{
     coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
   )}
 
-  fire(shipNum,coordinate){
-    if(this.fleet[shipNum].coordinates.length > 1){return this.checkHit(shipNum, coordinate)}
-    if(this.fleet[shipNum].coordinates.length===1){return this.checkSunk(shipNum, coordinate)}
+  fire(coordinate){
+    let shipNum;
+      for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
+        if(this.fleet[shipNum].coordinates.length > 1){return this.checkHit(shipNum, coordinate)}
+        if(this.fleet[shipNum].coordinates.length===1){return this.checkSunk(shipNum, coordinate)}
+    }
   }
 
-  checkHit(shipNum, coordinate){
-    return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit!":"Miss!")
+  checkHit(coordinate){
+    let shipNum;
+      for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
+        return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit!":"Miss!")
+      }
   }
 
-  checkSunk(shipNum, coordinate){
-    return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
+  checkSunk(coordinate){
+    let shipNum;
+      for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
+        return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
+      }
   }
 }
