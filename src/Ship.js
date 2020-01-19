@@ -17,7 +17,7 @@ class Ship{
     isHit(coordinate){
       if (this.coordinates.includes(coordinate)){
         this.coordinates = this.coordinates.filter(function(ele){return ele != coordinate})
-         return true
+          return true
       } else {
           return false
       }

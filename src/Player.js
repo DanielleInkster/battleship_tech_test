@@ -8,9 +8,10 @@ class Player{
 
   positionShip(shipNum, [...coordinates]) { 
     this.fleet[shipNum].checkLength(...coordinates),
+    this.board.checkIfValid(...coordinates),
     this.board.checkIfOccupied(...coordinates),
     this.fleet[shipNum].setPosition()
-    coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
+      coordinates.forEach( item => { this.fleet[shipNum].coordinates.push(item) && this.board.occupiedCoordinates.push(item)}
   )}
 
   fire(coordinate){
