@@ -16,22 +16,22 @@ class Player{
   fire(coordinate){
     let shipNum;
       for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
-        if(this.fleet[shipNum].coordinates.length > 1){return this.checkHit(shipNum, coordinate)}
-        if(this.fleet[shipNum].coordinates.length===1){return this.checkSunk(shipNum, coordinate)}
+        if(this.fleet[shipNum].coordinates.length > 1){return this.checkHit(coordinate)}
+        if(this.fleet[shipNum].coordinates.length===1){return this.checkSunk(coordinate)}
     }
   }
 
   checkHit(coordinate){
     let shipNum;
       for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
-        return((this.fleet[shipNum].checkHit(coordinate)===true)?"Hit!":"Miss!")
+        return((this.fleet[shipNum].isHit(coordinate)===true)?"Hit!":"Miss!")
       }
   }
 
   checkSunk(coordinate){
     let shipNum;
       for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
-        return(this.fleet[shipNum].checkHit(coordinate) === true)?"Hit and sunk!":"Miss!"
+        return(this.fleet[shipNum].isSunk(coordinate) === true)?"Hit and sunk!":"Miss!"
       }
   }
 }

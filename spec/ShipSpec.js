@@ -27,19 +27,19 @@ describe("Ship", function() {
       })
     })
 
-    describe('checkHit', function(){
+    describe('isHit', function(){
       it("checks if a ship has been hit", () =>{
       ship2.coordinates = ['a1','a2','a3']
-      expect(ship2.checkHit('a1')).toEqual(true)
+      expect(ship2.isHit('a1')).toEqual(true)
       })
     })
 
-    describe('checkSunk', function(){
+    describe('isSunk', function(){
       it("checks if a ship has been sunk", () =>{
       ship2.coordinates = ['a1','a2','a3']
-      ship2.checkHit('a1')
-      ship2.checkHit('a2')
-      expect(ship2.checkSunk('a3')).toEqual(true)
+      ship2.isHit('a1')
+      ship2.isHit('a2')
+      expect(ship2.isSunk('a3')).toEqual(true)
       })
     })
 

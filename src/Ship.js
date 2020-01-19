@@ -14,7 +14,7 @@ class Ship{
       if (this.positioned === true) {throw "This ship has already been placed"} else {this.positioned = true}
     }
 
-    checkHit(coordinate){
+    isHit(coordinate){
       if (this.coordinates.includes(coordinate)){
         this.coordinates = this.coordinates.filter(function(ele){return ele != coordinate})
         return true
@@ -23,7 +23,7 @@ class Ship{
       }
     }
 
-    checkSunk(coordinate){
+    isSunk(coordinate){
        if (this.coordinates.includes(coordinate)){
           this.coordinates = "Ship sunk"
           this.shipSunk()
