@@ -24,4 +24,15 @@ describe("Game", function() {
     expect(game.winner()).toEqual("Player 1 wins!");
     })
   })
+
+  describe('player1Turn', function(){
+    //player2Turn has similar functionality
+    it("allows players to take turn", () =>{
+    game.startGame()
+    game.player2.fleet[0].coordinates = ['a1','a2','a3']
+    expect(game.player1Turn('a1')).toEqual("Hit!");
+    expect(game.player2.score.points).toEqual(11);
+    expect(game.player2.board.hits).toEqual(['a1']);
+    })
+  })
 })
