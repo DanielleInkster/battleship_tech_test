@@ -1,5 +1,5 @@
 class Player{
-  constructor(fleet = [ new Ship(3), new Ship(4), new Ship(5)], points = 12, board = new Board, score = new Score) {
+  constructor(fleet = [ new Ship(3), new Ship(4), new Ship(5)], board = new Board, score = new Score) {
     this.fleet = fleet
     this.turn = false
     this.board = board
@@ -24,14 +24,31 @@ class Player{
   checkHit(coordinate){
     let shipNum;
       for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
-        return((this.fleet[shipNum].isHit(coordinate)===true)?"Hit!":"Miss!")
+        if(this.fleet[shipNum].isHit(coordinate)===true){
+          this.shipHit(coordinate)
+            return "Hit!"
+        } else {
+          this.board.addMiss(coordinate)
+            return "Miss!"
+        }
       }
   }
 
   checkSunk(coordinate){
     let shipNum;
       for (shipNum = 0; shipNum < this.fleet.length; shipNum++) {
-        return(this.fleet[shipNum].isSunk(coordinate) === true)?"Hit and sunk!":"Miss!"
+        if (this.fleet[shipNum].isSunk(coordinate) === true){
+          this.shipHit(coordinate)
+            return "Hit and sunk!"}
+        else {
+          this.board.addMiss(coordinate)
+             return "Miss!"
+        }
       }
+  }
+
+  shipHit(coordinate){
+    this.board.addHit(coordinate)
+    this.score.changePoints()
   }
 }
