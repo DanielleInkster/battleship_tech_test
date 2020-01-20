@@ -12,16 +12,16 @@ describe('checkIfOccupied', function(){
   })
 
   describe('addHit', function(){
-    it("adds hit coordinate to array", () =>{
+    it("adds hit coordinate to availableCoordinates", () =>{
     board.addHit('a1')
-    expect(board.hits[0]).toEqual("a1");
+    expect(board.availableCoordinates[0]).toEqual("hit");
     })
   })
 
   describe('addMiss', function(){
     it("adds miss coordinate to array", () =>{
     board.addMiss('b1')
-    expect(board.misses[0]).toEqual("b1");
+    expect(board.availableCoordinates[8]).toEqual("miss");
     })
   })
 

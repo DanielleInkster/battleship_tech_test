@@ -32,7 +32,6 @@ describe("Game", function() {
     game.player2.fleet[0].coordinates = ['a1','a2','a3']
     expect(game.player1Turn('a1')).toEqual("Hit!");
     expect(game.player2.score.points).toEqual(11);
-    expect(game.player2.board.hits).toEqual(['a1']);
     })
   })
 })

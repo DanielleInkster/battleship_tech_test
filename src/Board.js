@@ -25,10 +25,22 @@ class Board{
     }
 
     addHit(coordinate){
-      this.hits.push(coordinate)
-    }
+      let index = this.availableCoordinates.indexOf(coordinate);
+        if (index !== -1) {
+          this.availableCoordinates[index] = "hit";
+        } 
+      }
+    
 
     addMiss(coordinate){
-      this.misses.push(coordinate)
+      let index = this.availableCoordinates.indexOf(coordinate);
+        if (index !== -1) {
+          this.availableCoordinates[index] = "miss";
+        } 
     }
+
+    returnBoard(){
+      return this.availableCoordinates
+    }
+    
 }
