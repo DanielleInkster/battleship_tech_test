@@ -8,16 +8,11 @@ class Game{
     this.player1.turn = true
   }
 
-  winner(){
-  if(this.player1.points === 0) return ("Player 2 wins!")
-  if(this.player2.points === 0) return ("Player 1 wins!")
-  }
-
   player1Turn(coordinate){
     if(this.player1.turn ===true){
     this.player1.turn = false
     this.player2.turn = true
-    return this.player2.fire(coordinate)
+      return this.player2.fire(coordinate)
     } else {
       throw "Please wait your turn!"
     }
@@ -27,9 +22,24 @@ class Game{
     if(this.player2.turn ===true){
     this.player2.turn = false
     this.player1.turn = true
-    return this.player1.fire(coordinate)
+      return this.player1.fire(coordinate)
     } else {
       throw "Please wait your turn!"
     }
+  }
+
+  winner(){
+    if(this.player1.points === 0){
+      this.endGame()
+        return "Player 2 wins!"
+    } else if(this.player2.points === 0){
+      this.endGame()
+        return "Player 1 wins!"
+    }
+  }
+
+  endGame(){
+    this.player1.turn = false
+    this.player2.turn = false
   }
 }

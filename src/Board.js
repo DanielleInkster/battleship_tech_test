@@ -17,11 +17,17 @@ class Board{
     }
 
     checkIfOccupied(...coordinates){
-      coordinates.forEach(item => {if (this.occupiedCoordinates.includes(item)) {throw "One or more of the co-ordinates entered is already occupied. Please try again."}})
+      coordinates.forEach(item => {if (this.occupiedCoordinates.includes(item)){
+        throw "One or more of the co-ordinates entered is already occupied. Please try again."
+        }
+      })
     }
 
     checkIfValid(...coordinates){
-      coordinates.forEach(item => {if (!this.availableCoordinates.includes(item)) {throw "Co-ordinates can only include letters A-H and numbers 1-8 (Ex: 'A1', 'C7')"}})
+      coordinates.forEach(item => {if (!this.availableCoordinates.includes(item)){
+        throw "Co-ordinates can only include letters A-H and numbers 1-8 (Ex: 'A1', 'C7')"
+        }
+      })
     }
 
     addHit(coordinate){
@@ -30,7 +36,6 @@ class Board{
           this.availableCoordinates[index] = "hit";
         } 
       }
-    
 
     addMiss(coordinate){
       let index = this.availableCoordinates.indexOf(coordinate);
@@ -42,5 +47,4 @@ class Board{
     returnBoard(){
       return this.availableCoordinates
     }
-    
 }
