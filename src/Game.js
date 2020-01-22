@@ -14,7 +14,7 @@ class Game{
     this.player2.turn = true
       return this.player2.fire(coordinate)
     } else {
-      throw "Please wait your turn!"
+      throw "Not your turn. Please wait."
     }
   }
 
@@ -24,7 +24,7 @@ class Game{
     this.player1.turn = true
       return this.player1.fire(coordinate)
     } else {
-      throw "Please wait your turn!"
+      throw "Not your turn. Please wait."
     }
   }
 
