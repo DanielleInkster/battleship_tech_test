@@ -25,4 +25,11 @@ describe('checkIfOccupied', function(){
     })
   })
 
+  describe('checkIfSequential', function(){
+    it("prevents a player from putting ship on non-sequential co-ordinates", () =>{
+    expect(function(){ board.checkIfSequential('b1','c2','b3'); } ).toThrow("Please enter sequential coordinates.");
+    
+    })
+  })
+
 })

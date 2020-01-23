@@ -30,13 +30,15 @@ class Board{
       })
     }
 
-    checkIfOrdered(...coordinates){
+    checkIfSequential(...coordinates){
        let first = this.availableCoordinates.indexOf(coordinates[0])
        let second = this.availableCoordinates.indexOf(coordinates[1])
 
-       if ((first +1)!= second){
-         throw "Please enter sequential co-ordinates"
-       }    
+       if (((first +1) === second) || ((first - 1) === second) || ((first +8) === second) || ((first - 8) === second)){
+         return true
+       } else {
+         throw "Please enter sequential coordinates."
+       } 
     }
 
     addHit(coordinate){
