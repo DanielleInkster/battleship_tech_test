@@ -30,11 +30,11 @@ class Board{
       })
     }
 
-    checkIfSequential(...coordinates){
+    checkIfSequential(row = 8, ...coordinates){
        let first = this.availableCoordinates.indexOf(coordinates[0])
        let second = this.availableCoordinates.indexOf(coordinates[1])
 
-       if (((first +1) === second) || ((first - 1) === second) || ((first +8) === second) || ((first - 8) === second)){
+       if (((first +1) === second) || ((first - 1) === second) || ((first + row) === second) || ((first - row) === second)){
          return true
        } else {
          throw "Please enter sequential coordinates."
