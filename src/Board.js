@@ -31,14 +31,14 @@ class Board{
     }
 
     checkIfSequential(...coordinates){
-       let first = this.availableCoordinates.indexOf(coordinates[0])
-       let second = this.availableCoordinates.indexOf(coordinates[1])
-
-       if (((first +1) === second) || ((first - 1) === second) || ((first + this.row) === second) || ((first - this.row) === second)){
-         return true
-       } else {
-         throw "Please enter sequential coordinates."
-       } 
+      for (var i = 0; i < coordinates.length-1; i++) {
+        var second = this.availableCoordinates.indexOf(coordinates[i+1])
+        if(((this.availableCoordinates.indexOf(coordinates[i])+1)===this.availableCoordinates.indexOf(coordinates[i+1]))||(this.availableCoordinates.indexOf(coordinates[i])+this.row=== this.availableCoordinates.indexOf(coordinates[i+1]))){
+          console.log(true)
+        } else{
+          throw "Please enter sequential coordinates."
+        }
+      }
     }
 
     addHit(coordinate){
