@@ -32,8 +32,9 @@ class Board{
 
     checkIfSequential(...coordinates){
       for (var i = 0; i < coordinates.length-1; i++) {
+        var first = this.availableCoordinates.indexOf(coordinates[i])
         var second = this.availableCoordinates.indexOf(coordinates[i+1])
-        if(((this.availableCoordinates.indexOf(coordinates[i])+1)===this.availableCoordinates.indexOf(coordinates[i+1]))||(this.availableCoordinates.indexOf(coordinates[i])+this.row=== this.availableCoordinates.indexOf(coordinates[i+1]))){
+        if(((first+1)===second)||(first+this.row=== second)){
           console.log(true)
         } else{
           throw "Please enter sequential coordinates."
