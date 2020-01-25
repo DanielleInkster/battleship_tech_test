@@ -34,9 +34,7 @@ class Board{
       for (var i = 0; i < coordinates.length-1; i++) {
         var first = this.availableCoordinates.indexOf(coordinates[i])
         var second = this.availableCoordinates.indexOf(coordinates[i+1])
-        if(((first+1)===second)||(first+this.row=== second)){
-          console.log(true)
-        } else{
+        if(((first+1)!=second)&&(first+this.row!= second)){
           throw "Please enter sequential coordinates."
         }
       }
